@@ -1,0 +1,1 @@
+"SourceName=Microsoft-Windows-AppLocker" NOT "EventCode=11" | append [search "SourceName=McLogEvent" "EventCode=258" "deleted."] | append [search "WinEventLog:Application" "SourceName=EMET" mitigation] | stats count

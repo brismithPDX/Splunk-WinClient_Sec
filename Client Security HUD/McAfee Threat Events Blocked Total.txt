@@ -1,0 +1,1 @@
+source="WinEventLog:Application" "EventCode=257" "SourceName=McLogEvent" "Message=Blocked" | stats  count

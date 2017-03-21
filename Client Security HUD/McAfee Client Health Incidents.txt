@@ -1,0 +1,3 @@
+// McAfee Client Health Incidents
+
+"SourceName=McLogEvent" EventCode=258 OR EventCode=1007 | eval EventCode = case(EventCode="258","Update Failure",EventCode="1007","Config Access Failure") | stats count by EventCode

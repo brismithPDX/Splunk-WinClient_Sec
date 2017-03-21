@@ -1,0 +1,1 @@
+sourcetype="WinEventLog:Application" SourceName = EMET mitigation | stats count

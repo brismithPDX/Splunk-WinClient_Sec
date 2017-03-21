@@ -1,0 +1,12 @@
+Query:
+sourcetype="WinEventLog:security" EventCode=4624| xmlkv | search(Logon_Type=9) | eval DayOfWeekN=strftime(_time, "%u") | eval myHour=strftime(_time, "%H") | eval myMinute=strftime(_time, "%M") | where NOT ( (myHour >= 8 AND myMinute >= 00) AND (myHour < 18 AND myMinute <= 59)) OR ((DayOfWeekN=6) OR (DayOfWeekN=7))| bucket _time span=1d | stats count by DayOfWeekN |eval DayOfWeekN =case(DayOfWeekN=1,"Monday",DayOfWeekN=2,"Tuesday",DayOfWeekN=3,"Wednesday",DayOfWeekN=4,"Thursday",DayOfWeekN=5,"Friday",DayOfWeekN=6,"Saturday",DayOfWeekN=7,"Sunday")
+
+Purpose:
+To monitor and report on inapproprate or anomalous use of impersonated, escalated, and alternitive credentails.
+
+Requirement(s):
+	3.1.12
+	3.3.1
+	3.9.1
+	3.9.2
+	NIST 800-53 Sepcifcly Mentioned Controls: CA-7(1,3), AU-2(4), AC-2(4,12), AC-6(9), SI-4(1,2,5,12,16,17)

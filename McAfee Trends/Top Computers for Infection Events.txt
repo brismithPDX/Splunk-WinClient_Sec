@@ -1,0 +1,1 @@
+sourcetype=mcafee_threats NOT"Threat Target Host Name"="Threat Target Host Name"| stats count by "Threat Target Host Name"

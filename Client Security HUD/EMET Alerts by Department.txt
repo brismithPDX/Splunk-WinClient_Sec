@@ -1,0 +1,1 @@
+sourcetype="WinEventLog:Application" SourceName = EMET EventType = 3 OR EventType = 2 | rex field=host "(?<Department>\w{3}).*" | stats count by Department

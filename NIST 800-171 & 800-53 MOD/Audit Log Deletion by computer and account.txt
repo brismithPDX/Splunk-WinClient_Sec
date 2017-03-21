@@ -1,0 +1,1 @@
+SourceName=Microsoft-Windows-Eventlog EventCode=1102 | stats count by Account_Name ComputerName

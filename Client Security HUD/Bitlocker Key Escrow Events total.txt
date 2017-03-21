@@ -1,0 +1,1 @@
+source="WinEventLog:Microsoft-Windows-MBAM/Operational" "EventCode=29" | stats count by host | stats count

@@ -1,0 +1,1 @@
+sourcetype="WinEventLog:Application" SourceName=EMET | stats count by ExploitAction host | stats count by ExploitAction

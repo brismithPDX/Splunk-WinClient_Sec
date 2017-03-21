@@ -1,0 +1,1 @@
+sourcetype="WinEventLog:security" EventCode=4663 TaskCategory="Removeable Storage"

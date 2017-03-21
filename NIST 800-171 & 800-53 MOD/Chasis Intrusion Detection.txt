@@ -1,0 +1,14 @@
+Query:
+sourcetype="WinEventLog:System" Chassis_intrusion_state=Open | stats count
+
+Purpose:
+To secure, monitor, log, and detect physical integrity of client machines.
+
+Requirement(s):
+	3.3.1
+	3.3.3
+	3.10.2
+	3.10.4
+	3.12.3
+	3.14.6
+	NIST 800-53 Sepcifcly Mentioned Controls: AU-2(3), PE-6, CA-7, SI-4(1)

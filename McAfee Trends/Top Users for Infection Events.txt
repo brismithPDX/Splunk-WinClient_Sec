@@ -1,0 +1,1 @@
+sourcetype=mcafee_threats NOT"Threat Target User Name"="Threat Target User Name"| stats count by "Threat Target User Name"

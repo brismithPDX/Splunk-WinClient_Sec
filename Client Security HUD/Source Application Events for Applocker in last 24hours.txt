@@ -1,0 +1,1 @@
+SourceName=Microsoft-Windows-AppLocker "EventCode=8003"|fields Message| erex Application examples="\PNCNOTIFIER.EXE, \LAS2LAS.EXE" | rex field=Application mode=sed "s/\\\//g" | stats count by Application

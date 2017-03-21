@@ -1,0 +1,2 @@
+sourcetype="WinEventLog:security" EventCode=4624  Account_Name="comp$*" Logon_Type=2 | bucket _time span=1d | eval DayOfWeekN=strftime(_time, "%u") | stats count by DayOfWeekN | stats avg(count) as "
+Avg Logons" by DayOfWeekN |eval DayOfWeekN =case(DayOfWeekN=1,"Monday",DayOfWeekN=2,"Tuesday",DayOfWeekN=3,"Wednesday",DayOfWeekN=4,"Thursday",DayOfWeekN=5,"Friday",DayOfWeekN=6,"Saturday",DayOfWeekN=7,"Sunday")

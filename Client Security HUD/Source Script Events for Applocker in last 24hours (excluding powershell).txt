@@ -1,0 +1,1 @@
+SourceName=Microsoft-Windows-AppLocker "EventCode=8006" NOT "*.PS1"  | fields Message | erex Script examples="\SETENGLISHLANGUAGEDEFAULTS.BAT, \START.CMD, \PLUGI111.BAT, \REMOTE_CONFIGURE.BAT, \COPY.BAT" | rex field=Script mode=sed "s/\\\//g" | stats count by Script

@@ -1,0 +1,1 @@
+"SourceName=McLogEvent" EventCode=5051 OR EventCode=5059 OR EventCode=5022 | eval EventCode = case(EventCode="5051","Application Hang",EventCode="5059","Application Crash",EventCode="5022","Statup Failure") | stats count by EventCode
